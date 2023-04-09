@@ -12,7 +12,7 @@ public class Inventory {
     }
 
     public void addInstrument(String serialNumber, double price, InstrumentSpec spec, InstrumentType instrumentType){
-        Instrument instrument = new Instrument(serialNumber, price, spec, instrumentType);
+        Instrument instrument = new Instrument(serialNumber, price, spec);
         inventory.add(instrument);
     }
 
