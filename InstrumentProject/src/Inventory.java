@@ -1,5 +1,3 @@
-import enums.InstrumentType;
-
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -11,7 +9,7 @@ public class Inventory {
         inventory = new LinkedList();
     }
 
-    public void addInstrument(String serialNumber, double price, InstrumentSpec spec, InstrumentType instrumentType){
+    public void addInstrument(String serialNumber, double price, InstrumentSpec spec){
         Instrument instrument = new Instrument(serialNumber, price, spec);
         inventory.add(instrument);
     }
@@ -29,7 +27,10 @@ public class Inventory {
 
         for(Iterator i = inventory.iterator(); i.hasNext();){
             Instrument instrument = (Instrument) i.next();
-            if(instrument.getSpec().matches(searchSpec)) matchingInstruments.add(instrument);
+            if(instrument.getSpec().matches(searchSpec)) {
+                matchingInstruments.add(instrument);
+                System.out.println("Instrument is: " + instrument.getSpec().getPropertiesMap().get("instrumentType"));
+            }
         }
 
 
