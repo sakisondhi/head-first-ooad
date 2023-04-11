@@ -25,19 +25,19 @@ public class Board {
         initialize();
     }
 
-    public void removeUnitFromTile(int xPosition, int yPosition, String unit){
+    public void removeUnitFromTile(int xPosition, int yPosition, Unit unit){
         ((Tile)tileBoard.get(xPosition).get(yPosition)).removeUnit(unit);
     }
     public Tile getTileAtPosition(int xPosition, int yPosition){
         return (Tile) tileBoard.get(xPosition).get(yPosition);
     }
 
-    public Map getTileUnits(int xPosition, int yPosition) {
+    public List getTileUnits(int xPosition, int yPosition) {
         return ((Tile)tileBoard.get(xPosition).get(yPosition)).getUnits();
     }
 
-    public void addUnitToTile(int xPosition, int yPosition, String unit, Object unitValue) {
-        ((Tile)tileBoard.get(xPosition).get(yPosition)).setUnit(unit, unitValue);
+    public void addUnitToTile(int xPosition, int yPosition, Unit unit) {
+        ((Tile)tileBoard.get(xPosition).get(yPosition)).setUnit(unit);
 
     }
 }

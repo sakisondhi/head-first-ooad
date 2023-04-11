@@ -1,30 +1,27 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Tile {
     private int xPosition;
     private int yPosition;
 
-    private Map<String, Object> unitMap;
+    private List units;
 
     public Tile(int xPosition, int yPosition){
         this.xPosition = xPosition;
         this.yPosition = yPosition;
-        unitMap = new HashMap<>();
+        this.units = new LinkedList();
     }
 
-    public Map<String, Object> getUnits(){
-        return unitMap;
+    public List getUnits(){
+        return units;
     }
 
-    public void setUnit(String unit, Object unitValue){
-        unitMap.put(unit, unitValue);
+    public void setUnit(Unit unit){
+        units.add(unit);
     }
 
-    public void removeUnit(String unit){
-        unitMap.remove(unit);
+    public void removeUnit(Unit unit){
+        units.remove(unit);
     }
 
 
