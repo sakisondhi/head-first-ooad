@@ -23,5 +23,9 @@ public class Tile {
         unitMap.put(unit, unitValue);
     }
 
+    public void removeUnit(String unit){
+        unitMap.remove(unit);
+    }
+
 
 }
